@@ -13,7 +13,7 @@ public class ContactsView extends Tab {
 
     class contactUnit extends HBox {
         private Image image;
-       
+
     }
 
     private ListView contactsListView;
