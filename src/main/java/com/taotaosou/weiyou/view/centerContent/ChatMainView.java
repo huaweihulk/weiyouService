@@ -5,8 +5,8 @@ import javafx.scene.layout.BorderPane;
 /**
  * Created by hulk on 17-5-15.
  */
-public class ChatView extends BorderPane {
-    public ChatView() {
+public class ChatMainView extends BorderPane {
+    public ChatMainView() {
 
     }
 }
