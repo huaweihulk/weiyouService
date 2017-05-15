@@ -27,6 +27,8 @@ public class WebFrame extends JFrame {
         client = cefApp.createClient();
         cefBrowser = client.createBrowser(startURL, useOSR, isTransparent,
                 CefRequestContext.createContext(new DefaultCefRequestContextHandler()));
+        client.addRequestHandler(new ClientRequestHandler());
+        add(getBrowerFrame());
     }
 
     private Component getBrowerFrame() {

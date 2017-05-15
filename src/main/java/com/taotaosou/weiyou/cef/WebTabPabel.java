@@ -12,6 +12,7 @@ public class WebTabPabel extends JTabbedPane {
     private CefApp cefApp;
     private boolean useOSR;
     private boolean isTransparent;
+    private int wechatOpenCount = 1;
 
     public WebTabPabel(boolean useOSR, boolean isTransparent) {
         CefSettings settings = new CefSettings();
@@ -26,7 +27,7 @@ public class WebTabPabel extends JTabbedPane {
         return webFrame;
     }
 
-    private void addANewPanel() {
-
+    public void addANewPanel(String url) {
+        addTab("wecchat" + wechatOpenCount, generateWebFrame(url));
     }
 }
