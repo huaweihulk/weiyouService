@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jcef">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/soft/jcef/java-cef/binary_distrib/linux64/bin/gluegen-rt-natives-linux-amd64.jar!/" />
+      <root url="jar://$USER_HOME$/soft/jcef/java-cef/binary_distrib/linux64/bin/gluegen-rt.jar!/" />
+      <root url="jar://$USER_HOME$/soft/jcef/java-cef/binary_distrib/linux64/bin/jcef-tests.jar!/" />
+      <root url="jar://$USER_HOME$/soft/jcef/java-cef/binary_distrib/linux64/bin/jcef.jar!/" />
+      <root url="jar://$USER_HOME$/soft/jcef/java-cef/binary_distrib/linux64/bin/jogl-all-natives-linux-amd64.jar!/" />
+      <root url="jar://$USER_HOME$/soft/jcef/java-cef/binary_distrib/linux64/bin/jogl-all.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
