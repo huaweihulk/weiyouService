@@ -15,8 +15,8 @@ import javafx.scene.layout.HBox;
  * Created by hulk on 17-5-15.
  */
 public class ContactsView extends Tab {
-    private ListView<contactUnit> contactUnitListView = new ListView<>();
-    private ObservableList<ContactsView> contactsViewObservableList = FXCollections.observableArrayList();
+    private ListView<ContactUnit> contactUnitListView = new ListView<>();
+    private ObservableList<ContactUnit> contactsViewObservableList = FXCollections.observableArrayList();
 
     class ContactsCell extends ListCell<ContactsCell> {
         @Override
@@ -25,11 +25,11 @@ public class ContactsView extends Tab {
         }
     }
 
-    class contactUnit extends HBox {
+    class ContactUnit extends HBox {
         private Image image;
         private Label label;
 
-        public contactUnit(Image image, Label label) {
+        public ContactUnit(Image image, Label label) {
             this.image = image;
             this.label = label;
             ImageView imageView = new ImageView(image);
@@ -38,10 +38,18 @@ public class ContactsView extends Tab {
         }
     }
 
-    private ListView contactsListView;
-
     public ContactsView() {
         setText(ResourcesName.ALL_CONTACTS);
+        for (int i = 0; i < 20; i++) {
+            Image headerImage = new Image(getClass().getClassLoader().getResourceAsStream("chat.png"));
+            contactsViewObservableList.add(new ContactUnit(headerImage, new Label("陈换吵")));
+        }
+
+        contactUnitListView.setItems(contactsViewObservableList);
+        contactUnitListView.setPrefHeight(1400);
+        setContent(contactUnitListView);
+        setClosable(false);
+
 
     }
 }

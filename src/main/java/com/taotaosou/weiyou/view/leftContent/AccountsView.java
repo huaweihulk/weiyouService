@@ -26,7 +26,7 @@ public class AccountsView extends ListView<AccountUnitView> {
             accountUnitViews.add(new AccountUnitView());
         }
 
-        setCellFactory((ListView<AccountUnitView> l) -> new AccountCell());
+        //setCellFactory((ListView<AccountUnitView> l) -> new AccountCell());
         setItems(accountUnitViews);
         setHeight(700);
     }

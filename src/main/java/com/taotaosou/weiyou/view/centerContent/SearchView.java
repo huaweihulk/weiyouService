@@ -10,6 +10,6 @@ public class SearchView extends HBox {
     public SearchView() {
         TextField searchText = new TextField();
         searchText.setText("搜索微信名/备注名");
-
+        getChildren().add(searchText);
     }
 }

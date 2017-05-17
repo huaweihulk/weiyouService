@@ -64,6 +64,8 @@ public class RecentChatView extends Tab {
 
         recentChatUnitListView.setCellFactory((ListView<RecentChatUnit> l) -> new RecentViewCell());
         recentChatUnitListView.setItems(observableList);
-        setGraphic(recentChatUnitListView);
+        recentChatUnitListView.setPrefHeight(1400);
+        setContent(recentChatUnitListView);
+        setClosable(false);
     }
 }

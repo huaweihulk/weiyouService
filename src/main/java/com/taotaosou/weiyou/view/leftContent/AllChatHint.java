@@ -22,5 +22,6 @@ public class AllChatHint extends HBox {
         Label label = new Label(ResourcesName.ALL_CHAT_HINT);
         label.setStyle("-fx-font-size: 20px;");
         getChildren().add(label);
+
     }
 }

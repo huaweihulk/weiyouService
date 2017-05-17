@@ -1,9 +1,13 @@
 package com.taotaosou.weiyou.cef;
 
 import org.cef.CefApp;
+import org.cef.CefClient;
 import org.cef.CefSettings;
+import org.cef.browser.CefBrowser;
+import org.cef.browser.CefRequestContext;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by hulk on 17-5-15.
@@ -14,17 +18,19 @@ public class WebTabPabel extends JTabbedPane {
     private boolean isTransparent;
     private int wechatOpenCount = 1;
 
-    public WebTabPabel(boolean useOSR, boolean isTransparent) {
-        CefSettings settings = new CefSettings();
-        settings.windowless_rendering_enabled = useOSR;
-        cefApp = CefApp.getInstance(settings);
+    public WebTabPabel(CefApp cefApp, boolean useOSR, boolean isTransparent) {
+        this.cefApp = cefApp;
         this.useOSR = useOSR;
         this.isTransparent = isTransparent;
     }
 
-    private WebFrame generateWebFrame(String url) {
-        WebFrame webFrame = new WebFrame(cefApp, url, useOSR, isTransparent);
-        return webFrame;
+    private Component generateWebFrame(String url) {
+        CefClient cefClient = cefApp.createClient();
+        CefBrowser cefBrowser = cefClient.createBrowser(url, useOSR, isTransparent,
+                CefRequestContext.createContext(new DefaultCefRequestContextHandler()));
+        cefClient.addRequestHandler(new ClientRequestHandler());
+        Component browser = cefBrowser.getUIComponent();
+        return browser;
     }
 
     public void addANewPanel(String url) {
